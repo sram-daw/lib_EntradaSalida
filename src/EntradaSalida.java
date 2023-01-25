@@ -1,3 +1,5 @@
+import com.sun.security.jgss.GSSUtil;
+
 import javax.swing.*;
 
 public class EntradaSalida {
@@ -14,14 +16,27 @@ public class EntradaSalida {
     static boolean salida(String msj, int device) {
         switch (device) {
             case SALIDA_CONSOLA:
-                // TODO: try catch
-                System.out.println("Consola: " + msj);
-                return true;
+                try {
+                    System.out.println("Consola: " + msj);
+                    return true;
+                } catch (Exception e) {
+                    return false;
+                }
+
             case SALIDA_WINDOW:
-                JOptionPane.showMessageDialog(null,"Sale por un ventana " + msj);
-                return true;
+                try {
+                    JOptionPane.showMessageDialog(null,"Sale por un ventana " + msj.toCharArray()[10]);
+                    return true;
+                } catch(Exception e) {
+                    System.out.println(e.getMessage());
+                    return false;
+                }
             default:
                 return false;
         }
+    }
+
+    static String entrada(String comentario){
+        return "";
     }
 }
