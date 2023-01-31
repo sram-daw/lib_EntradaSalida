@@ -16,6 +16,15 @@ public class EntradaSalida {
      */
     public static final int SALIDA_WINDOW = 2;
 
+    /**
+     * opción de uso para mostrar el mensaje que solicita introducir datos por consola
+     */
+    public static final int ENTRADA_CONSOLA = 1;
+    /**
+     * opción de uso para mostrar el mensaje que solicita introducir datos por ventana
+     */
+    public static final int ENTRADA_WINDOW = 2;
+
     private void EntradaSalida(){};
 
     /**
@@ -49,10 +58,10 @@ public class EntradaSalida {
 
     /**
      * TODO método para obtener distintos tipos de datos por consola
-     * @param comentario
-     * @return
+     * @param comentario cadena de texto solicitada al usuario
+     * @return mismo valor que ha introducido el usuario
      */
     public static String entrada(String comentario){
-        return "";
+        return comentario;
     }
 }
