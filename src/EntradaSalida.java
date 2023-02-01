@@ -19,11 +19,11 @@ public class EntradaSalida {
     public static final int SALIDA_WINDOW = 2;
 
     /**
-     * opción de uso para mostrar el mensaje que solicita introducir datos por consola
+     * opción de uso para determinar si se debe introducir un entero
      */
     public static final int ENTRADA_INT = 1;
     /**
-     * opción de uso para mostrar el mensaje que solicita introducir datos por ventana
+     * opción de uso para determinar si se debe introducir un string
      */
     public static final int ENTRADA_STR = 2;
 
@@ -65,8 +65,9 @@ public class EntradaSalida {
     /**
      * TODO método para obtener distintos tipos de datos por consola
      *
-     * @param comentario cadena de texto solicitada al usuario
-     * @return mismo valor que ha introducido el usuario
+     * @param comentario cadena de texto que solicita un tipo u otro de dato
+     * @param tipoDato determina si el tipo de dato a introducir debe ser int o String
+     * @return true si el tipo de dato introducido es correcto, false si no lo es
      */
     public static boolean entrada(String comentario, int tipoDato) {
         Scanner input = new Scanner(System.in);
