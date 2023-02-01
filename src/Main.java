@@ -11,10 +11,13 @@ public class Main {
         if (!isOK_consola) System.out.println("ERROR CONSOLA");
         isOK_ventana = EntradaSalida.salida("Hello world", EntradaSalida.SALIDA_WINDOW);
         if (!isOK_ventana) System.out.println("ERROR VENTANA");
-        Scanner input = new Scanner(System.in);
-        System.out.println("Introduzca una palabra: ");
-        entradaUsuario = input.nextLine();
-        System.out.println(EntradaSalida.entrada(entradaUsuario));
+
+        boolean isOK_int=false;
+        boolean isOK_str=false;
+        isOK_int= EntradaSalida.entrada("Introduzca un entero: ", EntradaSalida.ENTRADA_INT);
+        if(!isOK_int) System.out.println("Error INT");
+        isOK_str= EntradaSalida.entrada("Introduzca una cadena de caracteres: ", EntradaSalida.ENTRADA_STR);
+        if (!isOK_str) System.out.println("Error String");
 
     }
 }
