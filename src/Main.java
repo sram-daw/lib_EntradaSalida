@@ -5,19 +5,27 @@ public class Main {
 
         boolean isOK_ventana = false;
         boolean isOK_consola = false;
-        String entradaUsuario = "";
+
 
         isOK_consola = EntradaSalida.salida("Hola", EntradaSalida.SALIDA_CONSOLA);
         if (!isOK_consola) System.out.println("ERROR CONSOLA");
         isOK_ventana = EntradaSalida.salida("Hello world", EntradaSalida.SALIDA_WINDOW);
         if (!isOK_ventana) System.out.println("ERROR VENTANA");
 
-        boolean isOK_int=false;
-        boolean isOK_str=false;
-        isOK_int= EntradaSalida.entrada("Introduzca un entero: ", EntradaSalida.ENTRADA_INT);
-        if(!isOK_int) System.out.println("Error INT");
-        isOK_str= EntradaSalida.entrada("Introduzca una cadena de caracteres: ", EntradaSalida.ENTRADA_STR);
-        if (!isOK_str) System.out.println("Error String");
+        int inputUserInt = 0;
+        String inputUserStr = "";
+        Scanner inputUser = new Scanner(System.in);
+        int opcionInput = 0;
+        System.out.println("Pulsa 1 para introducir un número y 2 para introducir texto:");
+        opcionInput = inputUser.nextInt();
+        switch (opcionInput) {
+            case EntradaSalida.ENTRADA_INT:
+                inputUserInt = EntradaSalida.entradaInt("Introduzca un número: ");
+                break;
 
+            case EntradaSalida.ENTRADA_STR:
+                inputUserStr = EntradaSalida.entradaStr("Introduzca una cadena de caracteres: ");
+                break;
+        }
     }
 }

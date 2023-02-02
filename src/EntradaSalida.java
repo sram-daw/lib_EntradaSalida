@@ -5,8 +5,8 @@ import java.util.Scanner;
  * Libreria para sacar por dispositivos un mensaje y
  * pedir por consola distintos tipos de datos
  *
- * @author Damian Nogueiras
- * @version 0.1
+ * @author Sara
+ * @version 0.2
  */
 public class EntradaSalida {
     /**
@@ -33,7 +33,7 @@ public class EntradaSalida {
     ;
 
     /**
-     * Salida por ventana o consala de un mensaje
+     * Salida por ventana o consola de un mensaje
      *
      * @param msj    cadena que queremos imprimir
      * @param device dispositivo de salida<br>consola: SALIDA_CONSOLA<br>ventana:SALIDA_VENTANA
@@ -63,39 +63,41 @@ public class EntradaSalida {
     }
 
     /**
-     * TODO método para obtener distintos tipos de datos por consola
+     * Método para obtener un String por consola
      *
-     * @param comentario cadena de texto que solicita un tipo u otro de dato
-     * @param tipoDato determina si el tipo de dato a introducir debe ser int o String
-     * @return true si el tipo de dato introducido es correcto, false si no lo es
+     * @param comentario cadena de texto que solicita el String al usuario
+     * @return devuelve el texto introducido por el usuario
      */
-    public static boolean entrada(String comentario, int tipoDato) {
+    public static String entradaStr(String comentario) {
         Scanner input = new Scanner(System.in);
-        int datoIntroducido = 0;
         String cadenaIntroducida = "";
-        switch (tipoDato) {
-            case ENTRADA_INT:
-                try {
-                    System.out.println(comentario);
-                    datoIntroducido = input.nextInt();
-                    return true;
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                    return false;
-                }
-
-            case ENTRADA_STR:
-                try {
-                    System.out.println(comentario);
-                    cadenaIntroducida = input.nextLine();
-                    return true;
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                    return false;
-                }
-            default:
-                return false;
-
+        try {
+            System.out.println(comentario);
+            cadenaIntroducida = input.nextLine();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Error al introducir el texto.");
         }
+        return cadenaIntroducida;
+    }
+
+    /**
+     * Método para obtener un int por consola
+     *
+     * @param comentario cadena de texto que solicita el int al usuario
+     * @return devuelve el número introducido por el usuario
+     */
+    public static int entradaInt(String comentario) {
+        Scanner input = new Scanner(System.in);
+        int numIntroducido = 0;
+        try {
+            System.out.println(comentario);
+            numIntroducido = input.nextInt();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Error al introducir el número.");
+        }
+        return numIntroducido;
     }
 }
+
