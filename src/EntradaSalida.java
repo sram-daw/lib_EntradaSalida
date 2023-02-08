@@ -66,7 +66,7 @@ public class EntradaSalida {
      * Método para obtener un String por consola
      *
      * @param comentario cadena de texto que solicita el String al usuario
-     * @return devuelve el texto introducido por el usuario
+     * @return devuelve el texto introducido por el usuario o un null si ha habido un error
      */
     public static String entradaStr(String comentario) {
         Scanner input = new Scanner(System.in);
@@ -86,7 +86,7 @@ public class EntradaSalida {
      * Método para obtener un int por consola
      *
      * @param comentario cadena de texto que solicita el int al usuario
-     * @return devuelve el número introducido por el usuario
+     * @return devuelve el número introducido por el usuario o un null si ha habido un error
      */
     public static Integer entradaInt(String comentario) {
         Scanner input = new Scanner(System.in);
