@@ -74,11 +74,12 @@ public class EntradaSalida {
         try {
             System.out.println(comentario);
             cadenaIntroducida = input.nextLine();
+            return cadenaIntroducida;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Error al introducir el texto.");
+            return null;
         }
-        return cadenaIntroducida;
     }
 
     /**
@@ -87,17 +88,18 @@ public class EntradaSalida {
      * @param comentario cadena de texto que solicita el int al usuario
      * @return devuelve el número introducido por el usuario
      */
-    public static int entradaInt(String comentario) {
+    public static Integer entradaInt(String comentario) {
         Scanner input = new Scanner(System.in);
-        int numIntroducido = 0;
+        Integer numIntroducido = 0;
         try {
             System.out.println(comentario);
             numIntroducido = input.nextInt();
+            return numIntroducido;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Error al introducir el número.");
+            return null;
         }
-        return numIntroducido;
     }
 }
 
