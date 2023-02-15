@@ -79,11 +79,12 @@ public class EntradaSalida {
             System.out.println(e.getMessage());
             System.out.println("Error al introducir el texto.");
             return null;
+
         }
     }
 
     /**
-     * Método para obtener un int por consola
+     * Método para obtener un integer por consola
      *
      * @param comentario cadena de texto que solicita el int al usuario
      * @return devuelve el número introducido por el usuario o un null si ha habido un error
